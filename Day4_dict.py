@@ -26,9 +26,9 @@ employee = {
 # print(employee)
 
 
-print(employee.keys())
+#print(employee.keys())
 
-print(employee.values())
+#print(employee.values())
 
 print(employee.items())
 #print(val1)
