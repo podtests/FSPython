@@ -12,17 +12,34 @@ class Employee:
     employeeCompanyName: str
 
 #constructor
-    def __init__(self, cardid, name):  
+    def __init__(self, cardid: str, name):  
         #all your instance variables need to be initialized inside constructor only
         self.cardid =  cardid      
         self.name = name
         print(f'{self.name}[{self.cardid}]: Employee class contructor called & object created!')
 
+    @staticmethod
+    def m4():        
+        print('Hi I am here!')
+        #print(name)
+        #print(self.name)
+        print(Employee.employeeCompanyName)
+
+    def accessVariables(self):
+        print('inside accessVariables')
+        #print(self.employeeCompanyName)
+        #print(cls.)
+        self.m4()
+        print(Employee.employeeCompanyName)
+        #print(self.cardid) 
+        #print(name)
+
 # instance method
-    def getPunchInTime(this, startTime, EndTime):
+    def getPunchInTime(self, startTime, EndTime):
         #name = 'Akhil Jain' # local variable
+        Employee.accessVariables()
         diff = EndTime - startTime
-        return f'{this.cardid} user spent time as {diff}'
+        return f'{self.cardid} user spent time as {diff}'
 
 
 
@@ -32,17 +49,32 @@ class Employee:
         # Employee.employeeCompanyName  = companyName
         cls.employeeCompanyName = companyName
 
+    @classmethod
+    def accessvariablesinsideclassmethod(cls):
+        
+        #print(self.name)
+        #print(name)
+        print('I am here!')
+        #print(cls.name)
+        cls.accessVariables()
+        #Employee.accessVariables()
+
+        #print(cls.name) #access instance variable
+
 
 #object creation
 e1 = Employee(1, 'Akhil Jain')
-e2 = Employee(2, 'Abilash')
-res = e1.getPunchInTime(80, 100)
-#e1.employeeCompanyName = 'infosys'
-#Employee.employeeCompanyName = 'infosys'
-
-e1.updateCompanyName('PodTest')
-print(e1.employeeCompanyName)
-print(e2.employeeCompanyName)
+#e1.m4()
+Employee.employeeCompanyName= 'PodTest'
+e1.accessVariables()
+#Employee.m4()
+#Employee.employeeCompanyName = 'PodTest'
+#e1.accessVariables()
+#e1.accessvariablesinsideclassmethod()
+#Employee.accessvariablesinsideclassmethod()
+#e1.accessVariables()
+#print(e1.name)
+#e1.getPunchInTime(78, 90)
     
 
 
