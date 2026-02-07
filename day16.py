@@ -41,5 +41,7 @@ path = Path(__file__)
 
 import json
 pth = path.joinpath(path.parent,"location.json")
-data = json.loads(pth)
+print(pth)
+json_text = pth.read_text()
+data = json.loads(json_text)
 print(data)
