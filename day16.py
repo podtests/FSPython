@@ -39,9 +39,8 @@ path = Path(__file__)
 # content = Path(filepathtoread).read_text(encoding='utf-8')
 # print(content)
 
-import json
-pth = path.joinpath(path.parent,"location.json")
+pth = path.joinpath(path.parent, "location.json")
 print(pth)
-json_text = pth.read_text()
-data = json.loads(json_text)
-print(data)
+with open(pth, "r", encoding="utf-8") as f:
+    json_text = f.read()
+print(json_text)
